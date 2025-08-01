@@ -40,8 +40,8 @@ async def send_welcome(message: types.Message):
 # ✅ /help Command
 @dp.message_handler(commands=["help"])
 async def help_command(message: types.Message):
-    await message.answer(
-        "Download notes [Click here](https://t.me/TopStudyPDFBot/files)\n\n"
+    await message.answer(
+        "Download notes [Click here](https://t.me/TopStudyPDFBot/files)\n\n"
         "📌 *Available Commands:*\n"
         "/start - वेलकम मैसेज\n"
         "/help - हेल्प कमांड\n"
