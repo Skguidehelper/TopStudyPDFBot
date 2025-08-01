@@ -1,2 +1,26 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folders
+env/
+venv/
+
+# Runtime data (Do NOT upload)
 database.json
 users.json
+
+# Notes folder (if contains user-uploaded PDFs)
+notes/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (if you use it)
+.vscode/
+
+# Log files
+*.log
