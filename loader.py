@@ -1,5 +1,5 @@
 # loader.py
-from config import BOT_TOKEN
+from config import TOKEN
 
-bot = Bot(token=BOT_TOKEN, parse_mode="HTML")
+bot = Bot(token=TOKEN, parse_mode="HTML")
 dp = Dispatcher(bot)
