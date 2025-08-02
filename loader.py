@@ -1,5 +1,7 @@
-# loader.py
-from config import TOKEN
 
-bot = Bot(token=TOKEN, parse_mode="HTML")
+# loader.py
+from aiogram import Bot, Dispatcher
+from config import BOT_TOKEN
+
+bot = Bot(token=BOT_TOKEN, parse_mode="HTML")
 dp = Dispatcher(bot)
