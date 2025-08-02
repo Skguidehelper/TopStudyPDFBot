@@ -36,12 +36,13 @@ async def send_welcome(message: types.Message):
         "🧭 शुरू करने के लिए /help दबाएं।",
         parse_mode="Markdown"
     )
+from aiogram import types
+from aiogram.dispatcher.filters import Command
+from loader import dp
 
-# ✅ /help Command
 @dp.message_handler(commands=["help"])
 async def help_command(message: types.Message):
-    await message.answer(
-        "📚 *Download notes:* [Click here](https://t.me/TopStudyPDFBot/files)\n\n"
+    text = (
         "📌 *Available Commands:*\n"
         "/start - वेलकम मैसेज\n"
         "/help - हेल्प कमांड\n"
@@ -49,9 +50,11 @@ async def help_command(message: types.Message):
         "/premium - प्रीमियम एक्सेस जानें\n"
         "/premiumnotes - प्रीमियम नोट्स पाएं\n"
         "/contact - संपर्क करें\n"
-        "/addpremium user_id - प्रीमियम यूजर जोड़ें (केवल एडमिन के लिए)",
-        parse_mode="Markdown"
+        "/addpremium user_id - प्रीमियम यूजर जोड़ें (केवल एडमिन के लिए)\n\n"
+        "📥 *Download notes:* [Click here](https://t.me/TopStudyPDFBot/files)"
     )
+    await message.answer(text, parse_mode="Markdown")
+
 
 # ✅ /notes Command
 @dp.message_handler(commands=['notes'])
