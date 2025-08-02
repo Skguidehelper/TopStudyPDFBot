@@ -192,3 +192,19 @@ async def broadcast_pdf(message: types.Message):
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
 
+# Add this at the end of bot.py
+from aiohttp import web
+
+async def handle(request):
+    return web.Response(text="Bot is running!")
+
+app = web.Application()
+app.add_routes([web.get("/", handle)])
+
+# Run aiohttp server on background
+import threading
+
+def run_web():
+    web.run_app(app, port=8080)
+
+threading.Thread(target=run_web).start()
